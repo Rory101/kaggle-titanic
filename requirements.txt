@@ -5,3 +5,4 @@ scikit-learn
 torch
 tensorflow
 kaggle
+apache-tvm
