@@ -98,13 +98,16 @@ class Passenger:
 
 
 def show_scatter_plot(data: pd.DataFrame, x_label: str, y_label: str):
-    x_data = data[x_label]
+    data = data.copy()
+    x_data = data[x_label].astype('str')
     y_data = data[y_label]
 
 
     mycmap = colors.ListedColormap(['red', 'green'])
 
     plt.figure()
+    # if x_data.dtype != str:
+    # x_data = x_data.astype(str)
     sc = plt.scatter(x_data, y_data, c=data['Survived'], cmap=mycmap)
     plt.colorbar(sc)
     plt.xlabel(x_label)
